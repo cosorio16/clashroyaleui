@@ -4,5 +4,14 @@
 
 .cards {
   scrollbar-color: rgba(255, 255, 255, 0.432) rgb(0, 0, 0);
-  scrollbar-width:none;
+  scrollbar-width: none;
+}
+
+html {
+  scrollbar-color: rgba(255, 255, 255, 0.432) rgb(0, 0, 0);
+  scrollbar-width: auto;
+}
+
+*::selection {
+  color: white;
 }

@@ -3,7 +3,7 @@ import Input from "./Input.jsx";
 
 function Nav() {
   return (
-    <header className="h-32 grid px-10">
+    <header className="h-32 grid px-10 z-50">
       <nav className="flex items-center justify-between">
         <div className="flex items-center gap-7">
           <img

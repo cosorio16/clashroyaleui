@@ -21,7 +21,7 @@ function Input() {
         name=""
         id=""
         placeholder="Search..."
-        class="bg-zinc-800 rounded-full w-72 px-1 placeholder:text-white placeholder:opacity-30 text-white font-semibold no-underline focus:outline-none"
+        className="bg-zinc-800 rounded-full w-72 px-1 placeholder:text-white placeholder:opacity-30 text-white font-semibold no-underline focus:outline-none"
       />
     </div>
   );

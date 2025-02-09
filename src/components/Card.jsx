@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Card({ name, image, description, bgColor, rarity }) {
   image = name.replace(" ", "");
+
+  switch (rarity) {
+    case "Common":
+      bgColor = "01d2ff";
+      break;
+    case "Epic":
+      bgColor = "b800fd";
+      break;
+    case "Rare":
+      bgColor = "ffa600";
+      break;
+    case "Legendary":
+      bgColor = "000";
+      break;
+    default:
+      break;
+  }
 
   return (
     <div
@@ -9,13 +26,13 @@ function Card({ name, image, description, bgColor, rarity }) {
       style={{ backgroundColor: `#${bgColor}` }}
     >
       <div
-        className="h-1/2 aspect-square object-contain m-auto -translate-y-20 scale-125 w-1/2"
+        className="h-1/2 aspect-square object-cover m-auto -translate-y-20 scale-125 w-1/2"
         style={{
           backgroundImage: `url(/cards/${image}.webp)`,
           backgroundPosition: `center`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
-          filter: `drop-shadow(1px 1px 10px #${bgColor})`,
+          filter: `drop-shadow(1px 1px 10px #${bgColor}) contrast(1.15)`,
         }}
       ></div>
       <div className="flex justify-between items-center">
@@ -30,14 +47,11 @@ function Card({ name, image, description, bgColor, rarity }) {
             />
           </svg>
         </p>
-        <button className="rounded-full p-2 text-xs tracking-wide translate-y-2 mb-3 min-w-16 font-medium">
-          Rarity
+        <button className="rounded-full p-2 text-xs tracking-wide translate-y-2 mb-3 min-w-16 font-medium border">
+          {rarity}
         </button>
       </div>
-      <p className="font-medium text-sm text-pretty">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem,
-        molestias?
-      </p>
+      <p className="font-medium text-sm text-pretty">{description}</p>
     </div>
   );
 }
